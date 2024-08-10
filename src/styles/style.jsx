@@ -4,7 +4,6 @@ export const styles = {
     borderColor: "gray",
     my: 5,
     borderRadius: 2,
-   
   },
   appname: {
     fontSize: { xs: 25, md: 30, lg: 45 },
@@ -17,6 +16,7 @@ export const styles = {
   skeleton: {
     my: 4,
     height: 42,
+    borderRadius: 2,
   },
   tocurrency: {
     text: {

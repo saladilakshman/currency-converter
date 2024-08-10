@@ -31,15 +31,17 @@ function App() {
       mode: "dark",
     },
   });
-  // () =>
-  //       JSON.parse(window.localStorage.getItem("currency")) ??
-  const [currencystate, setCurrencystate] = useState({
-    fromcurrency: currency[Math.floor(Math.random() * currency.length)],
-    tocurrency: currency[Math.floor(Math.random() * currency.length)],
-    currencyrate: 1,
-    isfetching: true,
-    exchangedetails: [],
-  });
+
+  const [currencystate, setCurrencystate] = useState(
+    () =>
+      JSON.parse(window.localStorage.getItem("currency")) ?? {
+        fromcurrency: currency[Math.floor(Math.random() * currency.length)],
+        tocurrency: currency[Math.floor(Math.random() * currency.length)],
+        currencyrate: 1,
+        isfetching: true,
+        exchangedetails: [],
+      }
+  );
   useEffect(() => {
     axios
       .get(
